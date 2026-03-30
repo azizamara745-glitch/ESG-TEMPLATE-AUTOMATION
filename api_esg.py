@@ -478,7 +478,8 @@ if __name__ == "__main__":
     print("=" * 60)
     print("\nPrêt à recevoir les requêtes n8n...\n")
     
-    # debug=True permet de voir les erreurs détaillées (désactive en production)
- import os
-port = int(os.environ.get("PORT", 5050))
-app.run(host="0.0.0.0", port=port, debug=False)
+    # Render utilise la variable PORT automatiquement
+    import os
+    port = int(os.environ.get("PORT", PORT_API))
+    app.run(host="0.0.0.0", port=port, debug=False)
+
