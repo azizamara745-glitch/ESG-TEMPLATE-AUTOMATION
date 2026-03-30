@@ -479,4 +479,6 @@ if __name__ == "__main__":
     print("\nPrêt à recevoir les requêtes n8n...\n")
     
     # debug=True permet de voir les erreurs détaillées (désactive en production)
-    app.run(host="0.0.0.0", port=PORT_API, debug=False)
+ import os
+port = int(os.environ.get("PORT", 5050))
+app.run(host="0.0.0.0", port=port, debug=False)
